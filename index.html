@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LH</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div class="toparea">
+  <div class="menuarea">
+    <div class="menuBar">
+      <div id="titleBar">
+        <a href="javascript:void(0)" id="sceneListToggle" class="sceneName"></a>
+        <div id="sceneList">
+          <ul class="scenes">
+            
+              <a href="javascript:void(0)" class="scene" data-id="0-start">
+                <li class="text">현관</li>
+              </a>
+            
+              <a href="javascript:void(0)" class="scene" data-id="1-livingroom1">
+                <li class="text">거실1</li>
+              </a>
+            
+              <a href="javascript:void(0)" class="scene" data-id="2-livingroom2">
+                <li class="text">거실2</li>
+              </a>
+            
+              <a href="javascript:void(0)" class="scene" data-id="3-room">
+                <li class="text">침실</li>
+              </a>
+            
+              <a href="javascript:void(0)" class="scene" data-id="4-bathroom">
+                <li class="text">화장실</li>
+              </a>
+            
+          </ul>
+        </div>
+        
+      </div>
+      <div id="areaBar">
+        <a href="javascript:void(0)" id="areaListToggle" class="menuName">36A</a>
+        <div id="areaList">
+          <ul class="scenes">
+              <a href="/" class="scene" style="font-weight: 900;">
+                  <li class="text">36A</li>
+              </a>
+              <a href="/46A/" class="scene">
+                  <li class="text">46A</li>
+              </a>
+              <a href="/46B_Before/" class="scene">
+                  <li class="text">46B(확장전)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">46B(확장후)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">59A(확장전)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">59A(확장후)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">59B(확장전)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">59B(확장후)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">66A(확장전)</li>
+              </a>
+              <a href="javascript:void(0)" class="scene">
+                  <li class="text">66A(확장후)</li>
+              </a>
+          </ul>
+        </div>
+
+      </div>
+      <div id="complexBar">
+        <a href="javascript:void(0)" id="complexToggle" class="complexName">단지 안내</a>
+        <div id="complexList">
+          <ul class="scenes">
+            <a href="javascript:void(0)" class="scene">
+              <li class="text">101동</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="helpWrap">
+    <a href="javascript:void(0)" id="help">
+        <img class="helpIcon" src="img/question-mark.png">
+    </a>
+  </div>
+</div>
+
+<div class="Togglemenu">
+  <a href="javascript:void(0)" id="autorotateToggle">
+    <img class="icon off" src="img/play.svg">
+    <img class="icon on" src="img/pause2.png">
+  </a>
+
+  <a href="javascript:void(0)" id="fullscreenToggle">
+    <img class="icon off" src="img/full-screen.svg">
+    <img class="icon on" src="img/full-screen.svg">
+  </a>
+
+  <a href="javascript:void(0)" id="minimapToggle">
+    <img class="icon off" src="img/map.svg">
+  </a>
+
+  <a href="javascript:void(0)" id="furnitureToggle">
+    <img class="icon off" src="img/furniture_off.png">
+    <img class="icon on" src="img/furniture_on.png">
+  </a>
+</div>
+
+<div class="modal">
+  <img class="minimap" src="img/minimap.png">
+  <img class="location" src="img/location.png">
+</div>
+
+<div class="background">
+  <div class="contentBox">
+      <div id="contents"><p>당신의 루브루를 먼저 경험해보세요.</p></div>
+      <a href="javascript:void(0)" id="start"><p>시작하기</p></a>
+  </div>
+</div>
+
+
+
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1596 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -ms-content-zooming: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#pano {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.toparea {
+  position: absolute;
+  top: 1%;
+  right: 1.5%;
+  width: 580px;
+  height: 100px;
+}
+
+.mobile .toparea {
+  position: absolute;
+  top: 1%;
+  right: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background.enabled {
+  display: none;
+}
+
+.contentBox {
+  position: absolute;
+  display: block;
+  width: 23.95vw;
+  height: 15.8vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+.contentBox #contents {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 8.3vh;
+  border: 2px solid #798D00;
+  border-radius: 3.5vh;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#contents p {
+  position: absolute;
+  display: block;
+  width: 23vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#start {
+  position: absolute;
+  display: block;
+  width: 7.5vw;
+  height: 4.15vh;
+  border: 2px solid #798D00;
+  border-radius: 3.5vh;
+  color: white;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-decoration-line: none;
+  font-weight: bold;
+}
+
+#start p {
+  position: absolute;
+  display: block;
+  width: 140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.mobile .contentBox {
+  position: absolute;
+  display: block;
+  width: 320px;
+  height: 130px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+.mobile #contents p {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mobile #start {
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 40px;
+  border: 2px solid #798D00;
+  border-radius: 3.5vh;
+  color: white;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-decoration-line: none;
+  font-weight: bold;
+}
+
+.help_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.help_guide {
+  position: absolute;
+  width: 120px;
+  height: 90px;
+  right: -5%;
+  top: -5%;
+  z-index: 1;
+}
+
+.help_guide .help_padding {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  right: 0;
+  border: 3px solid #FFFFFF;
+  border-radius: 25px;
+}
+
+.help_guide img.helpArrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 80%;
+  right: 33%;
+}
+
+.help_guide p {
+  position: absolute;
+  width: 70px;
+  bottom: 2%;
+  left: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.mobile .help_guide {
+  position: absolute;
+  width: 110px;
+  height: 90px;
+  right: -6%;
+  top: -5%;
+  z-index: 1;
+}
+
+.mobile .help_guide .help_padding {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: 1%;
+  right: 1%;
+  border: 3px solid #FFFFFF;
+  border-radius: 25px;
+}
+
+
+.helpWrap {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 1%;
+  right: 0;
+
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 25px;
+}
+
+.helpWrap img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  filter: invert(100%);
+}
+
+.mobile .helpWrap {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 1%;
+  right: 1%;
+
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 25px;
+}
+
+.menuarea {
+  position: absolute;
+  width: 490px;
+  height: 100px;
+  top: 1%;
+  right: 70px;
+}
+
+.mobile .menuarea {
+  position: absolute;
+  width: 81vw;
+  height: 100px;
+  top: 1%;
+  right: 60px;
+
+}
+
+.area_guide {
+  position: absolute;
+  width: 490px;
+  height: 90px;
+  top: -0.5%;
+  z-index: 1;
+}
+
+
+.area_guide .area_padding {
+  position: absolute;
+  width: 100%;
+  height: 54px;
+  right: 0;
+  border: 3px solid #FFFFFF;
+  border-radius: 25px;
+}
+
+.area_guide img.areaArrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 62%;
+  right: 50%;
+  transform: translate(50%, 0);
+  filter: invert(100%);
+}
+
+.area_guide p {
+  position: absolute;
+  width: 100px;
+  bottom: 2%;
+  left: 23%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mobile .area_guide {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  top: -0.5%;
+  z-index: 1;
+}
+
+.mobile .area_guide .area_padding {
+  position: absolute;
+  width: 100%;
+  height: 54px;
+  right: 0;
+  border: 3px solid #FFFFFF;
+  border-radius: 5vh;
+}
+
+.mobile .area_guide p {
+  position: absolute;
+  width: 100px;
+  bottom: 2%;
+  left: 9%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.menuBar {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+
+  background-color: rgba(121, 141, 0, 0.6);
+  border: 0;
+  border-radius: 3vh;
+  font-size: 17px;
+}
+.mobile .menuBar {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+
+  background-color: rgba(121, 141, 0, 0.6);
+  border: 0;
+  border-radius: 5vh;
+}
+
+#areaBar {
+  position: absolute;
+  left: 30px;
+  width: 120px;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(121, 141, 0, 0);
+}
+
+#areaBar .menuName {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+#areaBar a.menuName {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (hover: hover) {
+  #areaBar:hover #areaList {display: block;}
+}
+
+
+.mobile #areaBar {
+  position: absolute;
+  left: 3.5vw;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(121, 141, 0, 0);
+}
+
+#complexBar {
+  position: absolute;
+  right: 26px;
+  width: 120px;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(121, 141, 0, 0);
+}
+
+
+#complexBar .complexName {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  
+}
+
+#complexBar a.complexName {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (hover: hover) {
+  #complexBar:hover #complexList {display: block;}
+}
+
+
+
+.mobile #complexBar {
+  position: absolute;
+  right: 1.5vw;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(121, 141, 0, 0);
+}
+
+/*
+#titleBar {
+  position: absolute;
+  left: 180px;
+  width: 120px;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(121, 141, 0, 0);
+}*/
+
+#titleBar {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(121, 141, 0, 0);
+  transform: translate(-50%, 0);
+}
+
+#titleBar a.sceneName {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile #titleBar {
+  width: 120px;
+  height: 100%;
+}
+
+/* If there is a fullscreen button the title bar must make space for it */
+body.fullscreen-enabled #titleBar {
+  right: 80px;
+}
+
+body.fullscreen-enabled.mobile #titleBar {
+  right: 100px;
+}
+
+/* If there are multiple scenes the title bar must make space for the scene list toggle */
+body.multiple-scenes #titleBar {
+  right: 40px;
+}
+
+body.multiple-scenes.mobile #titleBar {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#titleBar .sceneName {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.mobile #titleBar .sceneName {
+  width: 100%;
+  line-height: 30px;
+}
+
+.Togglemenu {
+  position: absolute;
+  width: 230px;
+  height: 50px;
+  bottom: 2%;
+  left: 2%;
+}
+
+.mobile .Togglemenu {
+  position: absolute;
+  width: 230px;
+  height: 50px;
+  bottom: 2%;
+  left: 2%;
+}
+
+
+.tour_guide {
+  position: absolute;
+  width: 230px;
+  height: 90px;
+  bottom: 0.7%;
+  left: 0.5%;
+  z-index: 1;
+}
+
+.tour_guide .tour_padding {
+  position: absolute;
+  width: 239px;
+  height: 55px;
+  left: -2.5%;
+  bottom: -3%;
+  border: 3px solid #FFFFFF;
+  border-radius: 5px;
+}
+
+.tour_guide img.tourArrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 40%;
+  transform: scale3d(-1, -1, 1.5);
+  filter: invert(100%);
+}
+
+.tour_guide p {
+  position: absolute;
+  width: 80px;
+  top: 1%;
+  right: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mobile .tour_guide {
+  position: absolute;
+  width: 230px;
+  height: 90px;
+  bottom: 0.5%;
+  left: 0.5%;
+  z-index: 1;
+}
+
+#fullscreenToggle {
+  /*display: none;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+}
+
+.mobile #fullscreenToggle {
+  width: 50px;
+  height: 50px;
+}
+
+body.fullscreen-enabled #fullscreenToggle {
+  display: block;
+}
+
+#fullscreenToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  filter: invert(100%);
+}
+
+.mobile #fullscreenToggle .icon {
+  top: 5px;
+  right: 5px;
+}
+
+#fullscreenToggle .icon.on {
+  display: none;
+}
+
+#fullscreenToggle .icon.off {
+  display: block;
+}
+
+#fullscreenToggle.enabled .icon.on {
+  display: block;
+}
+
+#fullscreenToggle.enabled .icon.off {
+  display: none;
+}
+
+#autorotateToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+  right: 60px;
+}
+
+.mobile #autorotateToggle {
+  width: 50px;
+  height: 50px;
+  right: 60px;
+}
+
+/* If there is a fullscreen button, autorotate must placed a bit to the left */
+body.fullscreen-enabled #autorotateToggle {
+  right: 60px;
+}
+
+body.fullscreen-enabled.mobile #autorotateToggle {
+  right: 60px;
+}
+
+#autorotateToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  filter: invert(100%);
+}
+
+.mobile #autorotateToggle .icon {
+  top: 10px;
+  right: 10px;
+  top: 5px;
+  right: 5px;
+}
+
+#autorotateToggle .icon.on {
+  display: none;
+}
+
+#autorotateToggle .icon.off {
+  display: block;
+}
+
+#autorotateToggle.enabled .icon.on {
+  display: block;
+  width: 30px;
+  height: 31px;
+  top: 10px;
+  right: 10px;
+}
+
+#autorotateToggle.enabled .icon.off {
+  display: none;
+}
+
+#minimapToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+}
+
+#minimapToggle img {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  width: 37px;
+  height: 37px;
+  filter: invert(100%);
+}
+
+.mobile #minimapToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+}
+.mobile #minimapToggle img {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+  filter: invert(100%);
+}
+
+#furnitureToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+}
+
+#furnitureToggle img {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 35px;
+  height: 40px;
+  filter: invert(100%);
+}
+
+.mobile #furnitureToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(121, 141, 0, 0.5);
+  border: 0;
+  border-radius: 3px;
+}
+
+.mobile #furnitureToggle img {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 35px;
+  height: 40px;
+  filter: invert(100%);
+}
+
+#furnitureToggle .icon.on {
+  display: none;
+}
+
+#furnitureToggle .icon.off {
+  display: block;
+}
+
+#furnitureToggle.enabled .icon.on {
+  display: block;
+  top: 7px;
+  right: 10.5px;
+  width: 28px;
+  height: 40px;
+}
+
+#furnitureToggle.enabled .icon.off {
+  display: none;
+}
+
+.mobile #furnitureToggle .icon.on {
+  display: none;
+}
+
+.mobile #furnitureToggle .icon.off {
+  display: block;
+}
+
+.mobile #furnitureToggle.enabled .icon.on {
+  display: block;
+  top: 7px;
+  right: 10.5px;
+  width: 28.5px;
+  height: 40px;
+}
+
+.mobile #furnitureToggle.enabled .icon.off {
+  display: none;
+}
+
+#sceneListToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+.mobile #sceneListToggle {
+  width: 50px;
+  height: 50px;
+}
+
+
+#sceneListToggle .text {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 100%;
+  line-height: 30px;
+}
+
+@media (hover: hover) {
+  #titleBar:hover #sceneList.enabled {display: block;}
+}
+
+
+
+#sceneList {
+  position: absolute;
+  width: 140px;
+  max-height: 100%;
+  margin-left: 0;
+  top: 100%;
+  right: -10px;
+}
+
+#sceneList .scenes {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 100;
+  background-color: rgba(121, 141, 0, 0.6);
+  border-radius: 10px;
+}
+
+.mobile #sceneList {
+  display: none;
+  position: absolute;
+  width: 110px;
+  height: 200px;
+  margin-left: 0;
+  top: 100%;
+  right: 3.5%;
+}
+
+.mobile #sceneList.enabled {
+  display: block;
+}
+
+.mobile #sceneList .scenes {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 100;
+  background-color: rgba(121, 141, 0, 0.6);
+  border-radius: 10px;
+}
+
+#sceneList.enabled {
+  display: none;
+}
+
+#sceneList .scene {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+.mobile #sceneList .scene {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+
+#sceneList .scene .text {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mobile #sceneList .scene .text {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-touch #sceneList .scene:hover {
+  font-weight: 900;
+}
+
+
+#sceneList .scene.current {
+  font-weight: 900;
+}
+
+/* Hide scene list when only a single scene exists */
+body.single-scene #sceneList, body.single-scene #sceneListToggle {
+  display: none;
+}
+
+#areaList {
+  position: absolute;
+  display: none;
+  width: 140px;
+  max-height: 100%;
+  margin-left: 0;
+  top: 100%;
+  left: -10px;
+}
+
+#areaList.enabled {
+  display: block;
+}
+
+#areaList .scenes {
+  width: 100%;
+  margin-top: 23px;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgba(121, 141, 0, 0.6);
+  border-radius: 10px;
+  font-weight: 100;
+}
+
+#areaList .scene {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+#areaList .scene .text {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 90%;
+}
+
+.no-touch #areaList .scene:hover {
+  font-weight: 700;
+}
+
+.mobile #areaList {
+  position: absolute;
+  display: none;
+  width: 130px;
+  max-height: 100%;
+  margin-left: 0;
+  top: 94%;
+  left: -3.7vw;
+}
+
+.mobile #areaList.enabled {
+  display: block;
+}
+
+.mobile #areaList .scenes {
+  width: 100%;
+  margin-top: 23px;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgba(121, 141, 0, 0.6);
+  border-radius: 10px;
+  font-weight: 100;
+  right: 20px;
+}
+
+.mobile #areaList .scene {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+#complexList {
+  position: absolute;
+  display: none;
+  width: 140px;
+  height: 60px;
+  max-height: 100%;
+  margin-left: 0;
+  top: 100%;
+  right: -10px;
+}
+
+#complexList.enabled {
+  display: block;
+}
+
+#complexList .scenes {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgba(121, 141, 0, 0.6);
+  border-radius: 10px;
+}
+
+#complexList .scene {
+  display: block;
+  width: 100%;
+  height: 35px;
+}
+
+#complexList .scene .text {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  margin-top: 20px;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.no-touch #complexList .scene:hover {
+  font-weight: 700;
+}
+
+.mobile #complexList {
+  display: none;
+  width: 100px;
+  height: 60px;
+  right: 0vw;
+}
+
+.mobile #complexList.enabled {
+  display: block;
+}
+
+/* minimap */
+
+.modal {
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 200px;
+  bottom: 70px;
+  left: 2%;
+}
+
+.modal .minimap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.modal .location {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+}
+
+.modal.enabled {
+  display: block;
+}
+
+/* Link hotspot */
+
+.link-hotspot {
+  width: 60px;
+  height: 30px;
+  margin-left: -30px;
+  margin-top: -30px;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.no-touch .link-hotspot:hover {
+  opacity: 1;
+}
+
+.mobile .link-hotspot {
+  width: 60px;
+  height: 30px;
+}
+
+.link-hotspot-icon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 0, 5px, 5, #999;
+}
+
+.link-hotspot-tooltip {
+  position: absolute;
+  left: 100%;
+  top: 14px; /* ( 60 - (16 + 2*8) ) / 2 */
+
+  margin-left: 3px;
+
+  font-size: 16px;
+
+  max-width: 300px;
+
+  padding: 8px 10px;
+
+  border-radius: 5px;
+
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+
+  color: #fff;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  -ms-transform: translateX(-8px);
+  -webkit-transform: translateX(-8px);
+  transform: translateX(-8px);
+
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      opacity 0.3s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              opacity 0.3s;
+}
+
+.mobile .link-hotspot {
+  top: 19px; /* ( 70 - (16 + 2*8) ) / 2 */
+}
+
+.no-touch .link-hotspot:hover .link-hotspot-tooltip {
+  opacity: 1;
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Prevent tooltip from triggering */
+.link-hotspot-tooltip {
+  pointer-events: none;
+}
+.no-touch .link-hotspot:hover .link-hotspot-tooltip {
+  pointer-events: all;
+}
+
+/* Fallback mode without pointer-events (IE8-10) */
+.tooltip-fallback .link-hotspot-tooltip {
+  display: none;
+}
+.no-touch .tooltip-fallback .link-hotspot:hover .link-hotspot-tooltip {
+  display: block;
+}
+
+/* Info hotspot */
+
+.info-hotspot {
+  line-height: 1.2em;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.2s 0.2s;
+  transition: opacity 0.2s 0.2s;
+}
+
+.no-touch .info-hotspot:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.info-hotspot.visible {
+  opacity: 1;
+}
+
+.info-hotspot .info-hotspot-header {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(103,115,131);
+  cursor: pointer;
+  -webkit-transition: width 0.3s ease-in-out 0.5s,
+                      border-radius 0.3s ease-in-out 0.5s;
+  transition: width 0.3s ease-in-out 0.5s,
+              border-radius 0.3s ease-in-out 0.5s;
+}
+
+.mobile .info-hotspot .info-hotspot-header {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.desktop.no-touch .info-hotspot .info-hotspot-header:hover {
+  width: 260px;
+  border-radius: 5px;
+  -webkit-transition: width 0.3s ease-in-out,
+                      border-radius 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out,
+              border-radius 0.3s ease-in-out;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-header,
+.desktop.no-touch .info-hotspot.visible .info-hotspot-header:hover {
+  width: 260px;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-transition: width 0.3s ease-in-out,
+                      border-radius 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out,
+              border-radius 0.3s ease-in-out;
+}
+
+.info-hotspot .info-hotspot-icon-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile .info-hotspot .info-hotspot-icon-wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.info-hotspot .info-hotspot-icon {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+.info-hotspot .info-hotspot-title-wrapper {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 0;
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  -webkit-transition: width 0s 0.4s,
+                      padding 0s 0.4s;
+  transition: width 0s 0.4s,
+              padding 0s 0.4s;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-title-wrapper,
+.desktop.no-touch .info-hotspot .info-hotspot-header:hover .info-hotspot-title-wrapper {
+  width: 220px;
+  padding: 0 5px;
+  -webkit-transition: width 0s 0.4s,
+                      padding 0s 0.4s;
+  transition: width 0s 0.4s,
+              padding 0s 0.4s;
+}
+
+.info-hotspot .info-hotspot-title-wrapper:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.info-hotspot .info-hotspot-title {
+  display: inline-block;
+  vertical-align: middle;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot .info-hotspot-close-wrapper {
+  position: absolute;
+  left: 260px;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  border-top-right-radius: 5px;
+  background-color: rgb(78,88,104);
+  visibility: hidden;
+  -ms-transform: perspective(200px) rotateY(90deg);
+  -webkit-transform: perspective(200px) rotateY(90deg);
+  transform: perspective(200px) rotateY(90deg);
+  -ms-transform-origin: 0 50% 0;
+  -webkit-transform-origin: 0 50% 0;
+  transform-origin: 0 50% 0;
+  -webkit-transition: -ms-transform 0.3s 0.3s,
+                      -webkit-transform 0.3s 0.3s,
+                      transform 0.3s 0.3s,
+                      visibility 0s 0.6s;
+  transition: -ms-transform 0.3s 0.3s,
+              -webkit-transform 0.3s 0.3s,
+              transform 0.3s 0.3s,
+              visibility 0s 0.6s;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-close-wrapper {
+  visibility: visible;
+  -ms-transform: perspective(200px) rotateY(0deg);
+  -webkit-transform: perspective(200px) rotateY(0deg);
+  transform: perspective(200px) rotateY(0deg);
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      visibility 0s 0s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              visibility 0s 0s;
+}
+
+.info-hotspot .info-hotspot-close-icon {
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+}
+
+.info-hotspot .info-hotspot-text {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  max-height: 200px;
+  top: 40px;
+  left: 0;
+  padding: 10px;
+  background-color: rgb(58,68,84);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow-y: auto;
+  visibility: hidden;
+  /* rotate(90deg) causes transition flicker on Firefox 58 */
+  -ms-transform: perspective(200px) rotateX(-89.999deg);
+  -webkit-transform: perspective(200px) rotateX(-89.999deg);
+  transform: perspective(200px) rotateX(-89.999deg);
+  -ms-transform-origin: 50% 0 0;
+  -webkit-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      visibility 0s 0.3s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              visibility 0s 0.3s;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-text {
+  visibility: visible;
+  -ms-transform: perspective(200px) rotateX(0deg);
+  -webkit-transform: perspective(200px) rotateX(0deg);
+  transform: perspective(200px) rotateX(0deg);
+  -webkit-transition: -ms-transform 0.3s 0.3s,
+                      -webkit-transform 0.3s 0.3s,
+                      transform 0.3s 0.3s,
+                      visibility 0s 0s;
+  transition: -ms-transform 0.3s 0.3s,
+              -webkit-transform 0.3s 0.3s,
+              transform 0.3s 0.3s,
+              visibility 0s 0s;
+}
+
+/* Info hotspot modal */
+
+.desktop .info-hotspot-modal {
+  display: none;
+}
+
+.info-hotspot-modal {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 11000 !important;
+  background-color: rgba(0,0,0,.5);
+  line-height: 1.2em;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-in-out 0.5s,
+                      visibility 0s 0.7s;
+  transition: opacity 0.2s ease-in-out 0.5s,
+              visibility 0s 0.7s;
+}
+
+.info-hotspot-modal.visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.2s ease-in-out,
+                      visibility 0s 0s;
+  transition: opacity 0.2s ease-in-out,
+              visibility 0s 0s;
+}
+
+.info-hotspot-modal .info-hotspot-header {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  right: 10px;
+  width: auto;
+  height: 50px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out 0.2s;
+  transition: opacity 0.3s ease-in-out 0.2s;
+}
+
+.info-hotspot-modal.visible .info-hotspot-header {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out 0.2s;
+  transition: opacity 0.3s ease-in-out 0.2s;
+}
+
+.info-hotspot-modal .info-hotspot-icon-wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.info-hotspot-modal .info-hotspot-icon {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+.info-hotspot-modal .info-hotspot-title-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  width: auto;
+  height: 50px;
+  padding: 0 10px;
+}
+
+.info-hotspot-modal .info-hotspot-title-wrapper:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.info-hotspot-modal .info-hotspot-title {
+  display: inline-block;
+  vertical-align: middle;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot-modal .info-hotspot-close-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(78,88,104);
+  background-color: rgba(78,88,104,0.8);
+  cursor: pointer;
+}
+
+.info-hotspot-modal .info-hotspot-close-icon {
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+}
+
+.info-hotspot-modal .info-hotspot-text {
+  position: absolute;
+  top: 110px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+  overflow-y: auto;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot-modal.visible .info-hotspot-text {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out 0.4s;
+  transition: opacity 0.3s ease-in-out 0.4s;
+}
+
+/* View control buttons */
+
+.viewControlButton {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+body.view-control-buttons .viewControlButton {
+  display: block;
+}
+
+/* Hide controls when width is too small */
+@media (max-width: 600px) {
+  body.view-control-buttons .viewControlButton {
+    display: none;
+  }
+}
+
+.viewControlButton .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+/* Center is at margin-left: -20px */
+.viewControlButton-1 {
+  margin-left: -145px;
+}
+.viewControlButton-2 {
+  margin-left: -95px;
+}
+.viewControlButton-3 {
+  margin-left: -45px;
+}
+.viewControlButton-4 {
+  margin-left: 5px;
+}
+.viewControlButton-5 {
+  margin-left: 55px;
+}
+.viewControlButton-6 {
+  margin-left: 105px;
+}
