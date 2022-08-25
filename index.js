@@ -186,7 +186,30 @@
   scenes.forEach(function(scene) { 
     if(findIdxByScene(scene) < imageLength){
       var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
+
       el.addEventListener('click', function() { 
+        if(furniture) {
+          var idx = findIdxByScene(scene) + imageLength;
+          showSceneList();
+          // On mobile, hide scene list after selecting a scene.
+          if (document.body.classList.contains('mobile')) {
+            mobileHideSceneList();
+          } 
+          switchScene(findSceneByIdx(idx));
+        } else {
+          showSceneList();
+          // On mobile, hide scene list after selecting a scene.
+          if (document.body.classList.contains('mobile')) {
+            mobileHideSceneList();
+          } 
+          switchScene(scene); //else
+        }
+      });
+
+      let el2 = document.querySelector('.modal .area[data-id="' + scene.data.id + '"]');
+      console.log(el2);
+
+      el2.addEventListener('click', function() {
         if(furniture) {
           var idx = findIdxByScene(scene) + imageLength;
           showSceneList();
@@ -206,6 +229,7 @@
       });
     }
   });
+
 
   // DOM elements for view controls.
   var viewUpElement = document.querySelector('#viewUp');
@@ -234,6 +258,10 @@
 
   // hw - update sceneList when furmiture mode
   function switchScene(scene) {
+    let locationElement = document.querySelector('.modal .location');
+
+    curIdx = findIdxByScene(scene);
+
     stopAutorotate();
     scene.view.setParameters(scene.data.initialViewParameters);
     scene.scene.switchTo();
@@ -246,7 +274,7 @@
     }
 
     // hw - minimap location
-    var locationElement = document.querySelector('.modal .location');
+    
     locationElement.style.top = scene.data.minimapLocation.top;
     locationElement.style.left = scene.data.minimapLocation.left;
   }
@@ -389,24 +417,63 @@
     }
   }
 
-
   // hw - Minimap Toggle
   function minimapRotate(yaw) {
     var scene = viewer.scene();
     var view = scene.view();
     var yaw = view.yaw();
 
-    document.querySelector('.modal .location').style.transform = 'rotate(' + (yaw-0.2849) + 'rad)';
+
+    let locationElement = document.querySelector('.modal .location');
+    //locationElement.style.transform = 'rotate(' + (-yaw) + 'rad)';
+
+    var scene = findSceneByIdx(curIdx);
+
+    switch(scene.data.id) {
+      case "0-start":
+      case "5-start_i":
+        locationElement.style.transform = 'rotate(' + (3.15+yaw) + 'rad)';
+        break;
+      case "1-livingroom1":
+      case "6-livingroom1_i":
+        locationElement.style.transform = 'rotate(' + (3.15+yaw) + 'rad)';
+        break;
+      case "2-livingroom2":
+      case "7-livingroom2_i":
+        locationElement.style.transform = 'rotate(' + (1.62+yaw) + 'rad)';
+        break;
+      case "3-room":
+      case "8-room_i":
+        locationElement.style.transform = 'rotate(' + (3.15+yaw) + 'rad)';
+        break;
+      case "4-bathroom":
+      case "9-bathroom_i":
+        locationElement.style.transform = 'rotate(' + (4.72+yaw) + 'rad)';
+        break;
+    }
   }
 
   function toggleminimap() {
     var minimapModal = document.querySelector('.modal');
+
+    minimapInterior();
+
     if (minimapModal.classList.contains('enabled')) {
       minimapModal.classList.remove('enabled');
-      //setInterval(minimapRotate, 100);
+      setInterval(minimapRotate, 100);
     } else {
       minimapModal.classList.add('enabled');
       setInterval(minimapRotate, 100);
+    }
+  }
+
+  function minimapInterior() {
+    var minimapElement = document.querySelector(".modal .minimap");
+
+    if(furnitureToggleElenment.classList.contains('enabled')){
+      minimapElement.src = "../img/36A_i.png";
+    }else {
+      minimapElement.src = "../img/36A.png";
     }
   }
 
@@ -425,6 +492,8 @@
       var scene = findSceneByIdx(curIdx);
       switchScene(scene);
     }
+
+    minimapInterior();
   }
 
   function createLinkHotspotElement(hotspot) {

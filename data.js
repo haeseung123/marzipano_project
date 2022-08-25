@@ -36,27 +36,27 @@ var APP_DATA = {
           "target": "3-room"
         },
         {
-          "yaw": 0.4999701214362595,
-          "pitch": -0.0019487696895765794,
+          "yaw": 0.4948247298956119,
+          "pitch": 0.001954219906471266,
           "rotation": 0,
           "target": "4-bathroom"
         },
         {
-          "yaw": -0.5084819501469777,
-          "pitch": 0.0058188607870626186,
+          "yaw": -0.37449457182641765,
+          "pitch": 0.002066658570241131,
           "rotation": 0,
           "target": "2-livingroom2"
         }
       ],
       "infoHotspots": [],
       "minimapLocation" : {
-        "top": "36%",
-        "left": "21%"
+        "top": "81%",
+        "left": "50%"
       }
     },
     {
       "id": "1-livingroom1",
-      "name": "거실1",
+      "name": "거실",
       "levels": [
         {
           "tileSize": 256,
@@ -84,23 +84,27 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": 0,
-          "pitch": 0,
+          "yaw": 3.0738391440181587,
+          "pitch": 0.05894219626437547,
           "rotation": 0,
           "target": "2-livingroom2"
         },
         {
-          "yaw": -0.4728681073739409,
-          "pitch": 0.005732355041621062,
+          "yaw": 2.6003279001422825,
+          "pitch": 0.06321447784196721,
           "rotation": 0,
           "target": "0-start"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "30%",
+        "left": "16%"
+      }
     },
     {
       "id": "2-livingroom2",
-      "name": "거실2",
+      "name": "주방",
       "levels": [
         {
           "tileSize": 256,
@@ -128,29 +132,39 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": -2.800350692941249,
-          "pitch": 0.05146342456306385,
+          "yaw": -3.028336862227574,
+          "pitch": 0.09233123706113133,
           "rotation": 0,
           "target": "4-bathroom"
         },
         {
-          "yaw": -2.3576812179813995,
-          "pitch": 0.051916551738695915,
+          "yaw": -2.479405732342885,
+          "pitch": 0.07342879206861141,
           "rotation": 0,
           "target": "0-start"
         },
         {
-          "yaw": 1.5523033825357047,
-          "pitch": 0.0718779991469809,
+          "yaw": 2.6215402395177643,
+          "pitch": 0.0913427424630644,
+          "rotation": 0,
+          "target": "3-room"
+        },
+        {
+          "yaw": 1.5843798847742185,
+          "pitch": 0.10434182442132389,
           "rotation": 0,
           "target": "1-livingroom1"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "60%",
+        "left": "20%"
+      }
     },
     {
       "id": "3-room",
-      "name": "침실",
+      "name": "방",
       "levels": [
         {
           "tileSize": 256,
@@ -178,13 +192,17 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": 0.3463807284727345,
-          "pitch": 0.038597568422289896,
+          "yaw": -2.522474011822286,
+          "pitch": 0.1396784913282385,
           "rotation": 0,
           "target": "0-start"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "29%",
+        "left": "65%"
+      }
     },
     {
       "id": "4-bathroom",
@@ -216,15 +234,18 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": -2.7400643489747303,
-          "pitch": 0.1735435173558173,
+          "yaw": -2.725537782328935,
+          "pitch": 0.11040397171021432,
           "rotation": 0,
           "target": "2-livingroom2"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "65%",
+        "left": "71%"
+      }
     },
-    /* furniture */
     {
       "id": "5-start_i",
       "name": "현관",
@@ -261,27 +282,27 @@ var APP_DATA = {
           "target": "8-room_i"
         },
         {
-          "yaw": 0.4999701214362595,
-          "pitch": -0.0019487696895765794,
+          "yaw": 0.4948247298956119,
+          "pitch": 0.001954219906471266,
           "rotation": 0,
           "target": "9-bathroom_i"
         },
         {
-          "yaw": -0.5084819501469777,
-          "pitch": 0.0058188607870626186,
+          "yaw": -0.37449457182641765,
+          "pitch": 0.002066658570241131,
           "rotation": 0,
           "target": "7-livingroom2_i"
         }
       ],
       "infoHotspots": [],
       "minimapLocation" : {
-        "top": "36%",
-        "left": "21%"
+        "top": "81%",
+        "left": "50%"
       }
     },
     {
       "id": "6-livingroom1_i",
-      "name": "거실1",
+      "name": "거실",
       "levels": [
         {
           "tileSize": 256,
@@ -309,23 +330,27 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": 0,
-          "pitch": 0,
+          "yaw": 3.0738391440181587,
+          "pitch": 0.05894219626437547,
           "rotation": 0,
           "target": "7-livingroom2_i"
         },
         {
-          "yaw": -0.4728681073739409,
-          "pitch": 0.005732355041621062,
+          "yaw": 2.6003279001422825,
+          "pitch": 0.06321447784196721,
           "rotation": 0,
           "target": "5-start_i"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "30%",
+        "left": "16%"
+      }
     },
     {
       "id": "7-livingroom2_i",
-      "name": "거실2",
+      "name": "주방",
       "levels": [
         {
           "tileSize": 256,
@@ -353,29 +378,39 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": -2.800350692941249,
-          "pitch": 0.05146342456306385,
+          "yaw": -3.028336862227574,
+          "pitch": 0.09233123706113133,
           "rotation": 0,
           "target": "9-bathroom_i"
         },
         {
-          "yaw": -2.3576812179813995,
-          "pitch": 0.051916551738695915,
+          "yaw": -2.479405732342885,
+          "pitch": 0.07342879206861141,
           "rotation": 0,
           "target": "5-start_i"
         },
         {
-          "yaw": 1.5523033825357047,
-          "pitch": 0.0718779991469809,
+          "yaw": 2.6215402395177643,
+          "pitch": 0.0913427424630644,
+          "rotation": 0,
+          "target": "8-room_i"
+        },
+        {
+          "yaw": 1.5843798847742185,
+          "pitch": 0.10434182442132389,
           "rotation": 0,
           "target": "6-livingroom1_i"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "60%",
+        "left": "20%"
+      }
     },
     {
       "id": "8-room_i",
-      "name": "침실",
+      "name": "방",
       "levels": [
         {
           "tileSize": 256,
@@ -403,13 +438,17 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": 0.3463807284727345,
-          "pitch": 0.038597568422289896,
+          "yaw": -2.522474011822286,
+          "pitch": 0.1396784913282385,
           "rotation": 0,
           "target": "5-start_i"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "29%",
+        "left": "65%"
+      }
     },
     {
       "id": "9-bathroom_i",
@@ -441,13 +480,17 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
-          "yaw": -2.7400643489747303,
-          "pitch": 0.1735435173558173,
+          "yaw": -2.725537782328935,
+          "pitch": 0.11040397171021432,
           "rotation": 0,
           "target": "7-livingroom2_i"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [],
+      "minimapLocation" : {
+        "top": "65%",
+        "left": "71%"
+      }
     }
   ],
   "name": "Project Title",
